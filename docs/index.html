@@ -7,14 +7,14 @@
    <div id="calculator" style="width: 100%; height: 100%;"></div>
 	 <script src="equations.js"> </script>
    <script>
-        var elt = document.getElementById('calculator');
-        var calculator = Desmos.GraphingCalculator(elt);
+			var elt = document.getElementById('calculator');
+			var calculator = Desmos.GraphingCalculator(elt);
     
-				var key = 0;
-        for (var expr of latex) {
-					//console.log(expr);
-					key++;
-					calculator.setExpression({ id: 'expr-' + key, latex: expr.latex, color: expr.color });
-				}
+			var key = 0;
+			for (var expr of latex) {
+				//console.log(expr);
+				key++;
+				calculator.setExpression({ id: 'expr-' + key, latex: expr.latex, color: expr.color });
+			}
 	   </script>
 </html>
