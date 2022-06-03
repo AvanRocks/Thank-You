@@ -8,7 +8,7 @@
 	<script src="equations.js"> </script>
 	<script>
 		var elt = document.getElementById('calculator');
-		var calculator = Desmos.GraphingCalculator(elt, {lockViewport: true} );
+		var calculator = Desmos.GraphingCalculator(elt);
 
 		var defaultState = calculator.getState();
 		defaultState.graph.viewport = {
@@ -27,6 +27,5 @@
 			key++;
 			calculator.setExpression({ id: 'expr-' + key, latex: expr.latex, color: expr.color });
 		}
-
 	</script>
 </html>
