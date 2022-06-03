@@ -9,12 +9,24 @@
 	<script>
 		var elt = document.getElementById('calculator');
 		var calculator = Desmos.GraphingCalculator(elt, {lockViewport: true} );
-			
+
+		var defaultState = calculator.getState();
+		defaultState.graph.viewport = {
+			"xmin": -150,
+			"xmax": 500,
+			"ymin": -25,
+			"ymax": 375
+		};
+
+		calculator.setState(defaultState);
+		calculator.setDefaultState(defaultState);
+
 		var key = 0;
 		for (var expr of latex) {
 			//console.log(expr);
 			key++;
 			calculator.setExpression({ id: 'expr-' + key, latex: expr.latex, color: expr.color });
 		}
+
 	</script>
 </html>
