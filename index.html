@@ -1,0 +1,20 @@
+<script src="https://www.desmos.com/api/v1.3/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<html lang='en'>
+   <head>
+      <title>Desmos | Graphing Calculator</title>
+      <link rel='icon' href='https://www.desmos.com/favicon.ico'>
+   </head>
+   <div id="calculator" style="width: 100%; height: 100%;"></div>
+	 <script src="equations.js"> </script>
+   <script>
+        var elt = document.getElementById('calculator');
+        var calculator = Desmos.GraphingCalculator(elt);
+    
+				var key = 0;
+        for (var expr of latex) {
+					//console.log(expr);
+					key++;
+					calculator.setExpression({ id: 'expr-' + key, latex: expr.latex, color: expr.color });
+				}
+	   </script>
+</html>
